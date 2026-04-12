@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mencegah zoom manual dan menyesuaikan area poni HP (notch/safe-area) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   
   <title>Undangan Nikah Digital - template</title> 
 
   <style>
-    body {
+    /* KUNCI MUTLAK PADA PEMBUNGKUS LUAR */
+    html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed; /* Ini adalah kunci utamanya agar tidak terdorong address bar HP */
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0;
       overflow: hidden; /* Biar ga ada scrollbar */
       background-color: #0d1117; /* Warna background gelap biar pas loading ga silau */
+      overscroll-behavior-y: none; /* Mencegah layar HP tertarik-tarik (pull-to-refresh) */
     }
+
     iframe {
       border: none;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;  /* Menggunakan % mengikuti body, jangan gunakan vw */
+      height: 100%; /* Menggunakan % mengikuti body, jangan gunakan vh */
       display: block;
     }
   </style>
 </head>
 <body>
 
+  <!-- Pastikan link exec Anda ada di sini -->
   <iframe src="https://script.google.com/macros/s/AKfycbyDfKo5VptE60WXv9pgVcXEAFfnruJYaR9Xv7RGnnHAuc4YOhCXdcEweGGOD3SfO-fY/exec"></iframe>
 
 </body>
